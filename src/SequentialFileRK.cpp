@@ -72,6 +72,7 @@ bool SequentialFile::scanDir(void) {
                 }
             }
         }
+        delay(1);
     }
     closedir(dir);
     
@@ -165,6 +166,7 @@ void SequentialFile::removeFileNum(int fileNum, bool allExtensions) {
                         _log.trace("removed %s", path.c_str());
                     }
                 }
+                delay(1);
             }
             closedir(dir);
         }
@@ -193,6 +195,7 @@ void SequentialFile::removeAll(bool removeDir) {
             String path = dirPath + String("/") + ent->d_name;
             unlink(path);
             _log.trace("removed %s", path.c_str());
+            delay(1);
         }
         closedir(dir);
     }    
